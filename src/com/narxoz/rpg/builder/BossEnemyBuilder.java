@@ -21,8 +21,7 @@ public class BossEnemyBuilder extends AbstractEnemyBuilder {
         phases.clear();
         return this;
     }
-
-    // ✅ FIX: копируем phases, если Enemy = boss
+    
     public BossEnemyBuilder from(Enemy e) {
         super.from(e);
         phases.clear();
