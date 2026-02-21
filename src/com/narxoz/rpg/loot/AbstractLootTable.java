@@ -21,14 +21,10 @@ public abstract class AbstractLootTable implements LootTable {
 
     @Override
     public LootTable clone() {
-        try {
-            AbstractLootTable copy = (AbstractLootTable) super.clone();
-            // deep copy list
-            return recreate(new ArrayList<>(this.items), this.goldDrop, this.experienceDrop);
-        } catch (CloneNotSupportedException e) {
-            throw new IllegalStateException("LootTable clone failed", e);
-        }
-    }
+        return recreate(new ArrayList<>(this.items), this.goldDrop, this.experienceDrop);
+}
+
+
 
     protected abstract LootTable recreate(List<String> items, int gold, int xp);
 
@@ -37,4 +33,5 @@ public abstract class AbstractLootTable implements LootTable {
         return "Items=" + items + ", Gold=" + goldDrop + ", XP=" + experienceDrop;
     }
 }
+
 
